@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+# Ignore log and output files
+*.csv
+*.png
+*.log
+outputs/

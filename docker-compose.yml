@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: multi-gpu-benchmark
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      - ./outputs:/app/outputs
+    command: >
+      python3 benchmark.py synthetic
+      --matrix-size 2000
+      --iterations 200
+      --duration 60
+      --interval 1
