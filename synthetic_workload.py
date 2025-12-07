@@ -3,6 +3,7 @@ synthetic_workload.py: Perform a synthetic compute-intensive workload on a speci
 Each loop does a large matrix multiplication using PyTorch to fully utilize the GPU.
 """
 import torch
+import time
 
 
 def synthetic_compute_loop(gpu_id, matrix_size, max_iterations, end_time):
